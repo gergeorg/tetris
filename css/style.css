@@ -17,6 +17,12 @@ body {
 .container {
   width: 500px;
   margin: 0 auto;
+  display: grid;
+  gap: 50px;
+  align-items: flex-start;
+  grid-template-areas:
+    'game score'
+    'game next'
 }
 
 .title {
@@ -24,11 +30,36 @@ body {
   margin-bottom: 50px;
   font-weight: 800;
   color: #d1d2d3;
+  /* margin-bottom: 40vh; */
 }
 
 .game-area {
   display: block;
   border: 4px solid #fff;
   border-top: 0px;
+}
 
+.preview {
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+  grid-column: 1/3;
+}
+
+.score {
+  border: 2px solid #fff;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  grid-area: score;
+}
+
+.next {
+  border: 2px solid #fff;
+  padding: 10px;
+  grid-area: next;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
