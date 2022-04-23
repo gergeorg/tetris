@@ -18,8 +18,6 @@ export class View {
 
   canvas = document.createElement('canvas');
 
-
-
   preview () {
     this.container.textContent = '';
     const preview = document.createElement('div');
@@ -51,15 +49,18 @@ export class View {
     this.container.append(scoreBlock)
 
     return (lines, score, level, record) => {
-      linesElem.textContent = `lines: ${lines}`;
-      scoreElem.textContent = `score: ${score}`;
-      levelElem.textContent = `level: ${level}`;
-      recordElem.textContent = `record: ${record}`;
+      linesElem.textContent = `Lines: ${lines}`;
+      scoreElem.textContent = `Score: ${score}`;
+      levelElem.textContent = `Level: ${level}`;
+      recordElem.textContent = `Record: ${record}`;
     }
   }
 
   createBlockNextTetramino() {
     const nextTetraminoBlock = document.createElement('div')
+    const nextTetraminoText = document.createElement('p')
+    nextTetraminoText.classList.add('next-text')
+    nextTetraminoText.textContent = 'Next: '
     nextTetraminoBlock.classList.add('next');
     nextTetraminoBlock.style.width = `${SIZE_BLOCK * 4}px`;
     nextTetraminoBlock.style.height = `${SIZE_BLOCK * 4}px`;
@@ -67,7 +68,9 @@ export class View {
     const canvas = document.createElement('canvas');
     const context = canvas.getContext('2d');
 
+    nextTetraminoBlock.append(nextTetraminoText);
     nextTetraminoBlock.append(canvas);
+
 
     this.container.append(nextTetraminoBlock);
 

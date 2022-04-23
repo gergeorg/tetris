@@ -7,9 +7,7 @@ export class Game {
   lines = 0;
   level = 1;
   record = localStorage.getItem('tetris-record') || 0;
-
   points = [0, 100, 300, 700, 1500];
-
   gameOver = false;
 
   area = [
@@ -39,7 +37,6 @@ export class Game {
   nextTetramino =  this.createTetramino();
 
   createTetramino() {
-
     const keys = Object.keys(tetraminoes)
     const nameTetramino = keys[Math.floor(Math.random() * keys.length)];
     const rotation = tetraminoes[nameTetramino]
@@ -50,7 +47,7 @@ export class Game {
       block,
       rotationIndex,
       rotation,
-      x: 3,
+      x: 4,
       y: 0,
     }
   }
@@ -147,7 +144,7 @@ export class Game {
     this.calcScore(countRow);
     this.updatePanels();
 
-    this.gameOver = !this.checkOutPosition(this.activeTetramino.x, this.activeTetramino.y)
+    this.gameOver = !this.checkOutPosition(this.activeTetramino.x, this.activeTetramino.y);
   }
 
   clearRow() {

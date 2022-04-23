@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'GT-Eesti';
+  src: url('../fonts/GT-Eesti-Pro-Display-Regular.woff2') format('woff2'),
+      url('../fonts/GT-Eesti-Pro-Display-Regular.woff') format('woff');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 html {
   box-sizing: border-box;
 }
@@ -9,8 +19,13 @@ html {
 }
 
 body {
+  height: 90vh;
+  font-family: 'GT-Eesti';
+  background-image: url(../img/kisspng-tetris-online.png);
   background-color: #19171d;
-  font-family: sans-serif;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 40%;
 }
 
 
@@ -18,48 +33,63 @@ body {
   width: 500px;
   margin: 0 auto;
   display: grid;
-  gap: 50px;
+  gap: 150px 50px;
   align-items: flex-start;
   grid-template-areas:
-    'game score'
     'game next'
+    'game score';
+
+
 }
 
 .title {
   text-align: center;
   margin-bottom: 50px;
   font-weight: 800;
-  color: #d1d2d3;
-  /* margin-bottom: 40vh; */
+  color: #3ADF68;
 }
 
 .game-area {
   display: block;
-  border: 4px solid #fff;
+  border: 5px solid #fff;
   border-top: 0px;
 }
 
 .preview {
+  margin-top: 20vh;
+  padding-bottom: 30vh;
+  grid-column: 1/3;
   color: #fff;
   font-size: 30px;
   text-align: center;
-  grid-column: 1/3;
+  background-image: url(../img/200w.gif);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 50%;
 }
 
 .score {
-  border: 2px solid #fff;
-  font-size: 18px;
+  /* border: 2px solid #fff; */
+  font-size: 21px;
   text-align: center;
   color: #fff;
   padding: 20px;
   grid-area: score;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 25px
 }
 
 .next {
-  border: 2px solid #fff;
+  /* border: 2px solid #fff; */
   padding: 10px;
   grid-area: next;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.next-text {
+  color: #fff;
+  font-size: 21px;
 }

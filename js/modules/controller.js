@@ -21,7 +21,7 @@ export class Controller {
 
 
     const tick = () => {
-      const time = (1100 -100 * this.game.level);
+      const time = (1100 - 100 * this.game.level);
       if ( this.game.gameOver) return;
 
       setTimeout(() => {
